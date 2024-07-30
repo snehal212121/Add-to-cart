@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Crunchy Bites</h1>
+        <nav>
+            <button class="home-button" onclick="goHome()">Home</button>
+            <button id="reset-cart" class="reset-button" onclick="resetCart()">Reset Cart</button>
+            <button class="back-to-products" onclick="goBack()">Back to Products</button>
+            <button class="logout-button" onclick="logout()">Logout</button>
+        </nav>
+    </header>
+
+    <main>
+        <div id="login" class="view" style="display: none;">
+            <div class="login-container">
+                <h2>Login</h2>
+                <form id="login-form" onsubmit="login(event)">
+                    <input type="text" id="username" placeholder="Username" required>
+                    <input type="password" id="password" placeholder="Password" required>
+                    <button type="submit">Login</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="product-list" class="view">
+           
+            <div class="product">
+                <img src="download111.jfif" alt="Lays American Style" class="product-image">
+                <h3>Lays American Style</h3>
+                <p>Price: $10</p>
+                <button class="add-to-cart" onclick="addToCart('Lays American Style', 10, 'download111.jfif')">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="download222.jfif" alt="Lays Potato Chips" class="product-image">
+                <h3>Lays Potato Chips</h3>
+                <p>Price: $20</p>
+                <button class="add-to-cart" onclick="addToCart('Lays Potato Chips', 20, 'download222.jfif')">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="download333.jfif" alt="Lays Spicy" class="product-image">
+                <h3>Lays Spicy</h3>
+                <p>Price: $30</p>
+                <button class="add-to-cart" onclick="addToCart('Lays Spicy', 30, 'download333.jfif')">Add to Cart</button>
+            </div>
+            <div class="button-container">
+                <button onclick="viewCart()">View Cart</button>
+            </div>
+        </div>
+
+        <div id="cart" class="view" style="display: none;">
+            <h2>Shopping Cart</h2>
+            <ul id="cart-items"></ul>
+            <p id="total-price">Total: $0</p>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
